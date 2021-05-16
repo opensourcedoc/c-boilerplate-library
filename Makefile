@@ -31,9 +31,6 @@ ifeq (,$(C_STD))
 endif
 
 
-# Set the include path of libobjc on non-Apple platforms.
-OBJC_INCLUDE := -I $(GCC_LIB)/include
-
 .PHONY: all dynamic static clean
 
 all: dynamic
