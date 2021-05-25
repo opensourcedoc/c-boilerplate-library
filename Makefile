@@ -50,11 +50,15 @@ else
 endif
 
 %.o:%.c
+ifeq (,$(MAKECMDGOALS))
+	$(CC) -fPIC -std=$(C_STD) -c $< -o $@ $(CFLAGS) -I include
+else
 ifeq (dynamic,$(MAKECMDGOALS))
 	$(CC) -fPIC -std=$(C_STD) -c $< -o $@ $(CFLAGS) -I include
 else
 	$(CC) -std=$(C_STD) -c $< -o $@ $(CFLAGS) -I include
-endif
+endif  # make dynamic
+endif  # make
 
 clean:
 	$(RM) dist/$(DYNAMIC_LIB) dist/$(STATIC_LIB) $(OBJS)
