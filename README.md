@@ -62,4 +62,4 @@ Because seldom Visual C++ users compile programs with Make, we don't include the
 
 ## Copyright
 
-Copyright (c) 2020 Michael Chen. Licensed under MIT.
+Copyright (c) 2020 Michelle Chen. Licensed under MIT.
